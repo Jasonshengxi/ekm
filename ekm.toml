@@ -1,0 +1,26 @@
+[profile.dev]
+warn = ["all", "no-unused-function", "error"]
+sanitize = ["address", "undefined"]
+opt-level = 1
+debug = 3
+cc = "gcc"
+run = "{out} {args}"
+
+[profile.release]
+inherits = "dev"
+warn = []
+sanitize = []
+opt-level = 3
+debug = 0
+
+[profile.debug]
+inherits = "dev"
+opt-level = 0
+sanitize = []
+run = "gdb -- {out} {args}"
+
+[profile.fuzz]
+inherits = "debug"
+opt-level = 1
+cc = "afl-cc"
+run = "echo \"fuzzing from `ekm run` is currently not implemented.\""

@@ -362,13 +362,13 @@ def main():
                     run = [
                         "fish",
                         "-c",
-                        profile.run.format(bin=bin, args=" ".join(args.args)),
+                        profile.run.format(out=bin, args=" ".join(args.args)),
                     ]
-                else:
-                    run = [
-                        arg.format(bin=bin, args=" ".join(args.args))
-                        for arg in profile.run
-                    ]
+                # else:
+                #     run = [
+                #         arg.format(bin=bin, args=" ".join(args.args))
+                #         for arg in profile.run
+                #     ]
             else:
                 run = [bin] + args.args
 
