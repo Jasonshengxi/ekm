@@ -1,5 +1,5 @@
 [profile.dev]
-warn = ["all", "no-unused-function", "error"]
+warn = ["all", "no-unused-function", "no-unused-variable", "error"]
 sanitize = ["address", "undefined"]
 opt-level = 1
 debug = 3
